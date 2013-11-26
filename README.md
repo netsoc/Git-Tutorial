@@ -1,4 +1,4 @@
 Git-Tutorial
 ============
 
-Repo for the slides for the tutorial to happen on the 17th of October in AAP
+Repo for the slides for netsoc git tutorials (various)
