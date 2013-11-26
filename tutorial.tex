@@ -20,9 +20,15 @@
     Stands for Version Control System.\\
     A system used to control collaborative projects, so that multiple people can work on it at the same
     time without conflicts (as far as possible).\\
-    CVSes normally work by layering "commits" on top of each other. A commit is a set of changes from the previous state,
-    that can be used to produce the new state.\\
     Git is a DVCS, or Distributed CVS. This means that every user has a full copy of the project history.\\
+\end{frame}
+
+\begin{frame}
+    \frametitle{Quick Glossary}
+    "Working Directory" - The floder with your code in it, that you can edit\\
+    "commit" - a set of changes to your repository that can be used to bring it from one state to another\\
+    "push" - sending a bunch of commits somewhere\\
+    "pull" - grabbing a bunch of commits from somewhere
 \end{frame}
 
 \begin{frame}
@@ -265,7 +271,48 @@
     \end{center}
 
     Then just commit and push as normal\\
-    Often git will auto merge things, so long as they're not in the same pert of the same file
+    Often git will auto merge things, so long as they're not in the same part of the same file
+\end{frame}
+
+\begin{frame}
+    \frametitle{Remotes}
+
+    When you clone, a default "remote" is created, origin\\
+    So "git push origin master" means "push the default branch to the place I got this from"\\
+    You can add multiple remotes\\
+    This is useful for other people's forks
+\end{frame}
+
+\begin{frame}
+    \frametitle{Remotes}
+    Tell git where to get jonnosfork
+    \begin{block}{}
+        git remote add jonnosfork https://github.com/jonno/myrepo.git
+    \end{block}
+
+    Download the changes Jonno has made (this won't override your stuff)
+    \begin{block}{}
+        git fetch jonnosfork     
+    \end{block}
+    
+    Then you can "git merge jonnosfork/master"\\
+    Can also push to remotes if you have permission eg "git push jonnosfork master"
+\end{frame}
+
+\begin{frame}
+    \frametitle{Stashes}
+    
+    Sometimes want to pull, merge, etc when not finished with a commit\\
+    "git stash" saves uncommitted changes to a stack of stashes, and remove the from your working dir\\
+    "git stash pop" will apply the changes like a merge to your working dir and remove from stack\\
+\end{frame}
+
+\begin{frame}
+    \frametitle{Fin}
+
+     That is 99\% of what you need to know\\
+     Great resource: http://git-scm.com/\\
+     Enjoy using git!
 \end{frame}
 
 \end{document}
