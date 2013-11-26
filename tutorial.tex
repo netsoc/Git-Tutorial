@@ -15,6 +15,17 @@
 \titlepage
 
 \begin{frame}
+	\frametitle{What is a VCS}
+	
+	Stands for Version Control System.\\
+	A system used to control collaborative projects, so that multiple people can work on it at the same
+	time without conflicts (as far as possible).\\
+	CVSes normally work by layering "commits" on top of each other. A commit is a set of changes from the previous state,
+	that can be used to produce the new state.\\
+	Git is a DVCS, or Distributed CVS. This means that every user has a full copy of the project history.\\
+\end{frame}
+
+\begin{frame}
 	\frametitle{A tutorial introduction}
 
 	Lets start by creating a repo
@@ -27,7 +38,7 @@
 
 \begin{frame}
 	\frametitle{Cloning repositories}
-	Makes a local copy of a repository, form e.g github\\
+	Makes a local copy of a repository, from e.g github\\
 	Works with lot of protocols (http, ssh, native git protocol, even local files).
 
 	\begin{block}{Clone a local repository}
@@ -40,7 +51,7 @@
 
 \begin{frame}
 	\frametitle{Make your changes}
-	After the cloning a repo, as on the prevois slides, you will have a folder with the repositories
+	After the cloning a repo, as on the previous slides, you will have a folder with the repositories
 	files in it (normally source code for a program).
 
 	Make your changes, and then...
@@ -65,6 +76,20 @@
 	\end{block}
  	If you don't specify -m "whatever", git will open a text editor, and you can type your commit message in there 
 	Now the file is committed to your local repo, but not on the remote repo \emph{yet}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Remote repositories}
+
+	You now have a commit in your local repository that isn't in the remote repository.
+	You "push" this to the remote using
+	\begin{block}{}
+		git push origin master
+	\end{block}
+	
+	origin is the name that git gives to the place you cloned a repository from.\\
+	master is a branch, I will explain that later.
+
 \end{frame}
 
 \begin{frame}
