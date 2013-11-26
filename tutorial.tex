@@ -170,12 +170,42 @@
     Merged into master when feature is done\\
 \end{frame}
 
-    
+\begin{frame}
+    \frametitle{Branches}
+
+    To create a local branch called testbranch
+    \begin{block}{}
+        git checkout -b testbranch
+    \end{block}
+    This will create the branch based on your current branch (master), and switch into it\\
+
+    To view branches
+    \begin{block}{}
+        git branch
+    \end{block}
+    The current branch will have an asterix beside it
+
+    To change back to branch master
+    \begin{block}{}
+        git checkout master
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Branches}
+        Edit a file on the new branch and commit it\\
+        Then git checkout master\\
+        Your changes will have vanished because they are committed to the other branch\\
+        You can "merge" in changes from a branch into current branch with
+        \begin{block}{}
+            git merge testbranch
+        \end{block}
+\end{frame}
 
 \begin{frame}
     \frametitle{Conflicts}
 
-    What happens if we have made changes on the laptop copy too?\\\vbox{}
+    What happens if we try to merge or pull and there are conflicts?\\\vbox{}
     
     This is called a merge conflict\\
     Git resolves simple merge conflicts automagically\\
@@ -237,20 +267,5 @@
     Then just commit and push as normal\\
     Often git will auto merge things, so long as they're not in the same pert of the same file
 \end{frame}
-    
-       
-
-\begin{frame}
-    \frametitle{A tutorial introduction}
-
-    \begin{block}{Workflow}
-        Your local repository consists of three "trees" maintained by git. The first one is 
-        your \emph{Working Directory} which holds the actual files. the second one is the \emph{Index} which acts as a staging area and finally the \emph{HEAD} which points to the last commit you've made.
-    \end{block}
-    \begin{center}
-        \includegraphics[scale=0.3]{trees.png}
-    \end{center}
-\end{frame}
-
 
 \end{document}
