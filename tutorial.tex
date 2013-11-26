@@ -26,14 +26,34 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{A tutorial introduction}
+    \frametitle{What is github?}
 
-    Lets start by creating a repo
-    \begin{block}{Create a new repo}
+    Github is a hosting site for open source projects using git as their VCS\\
+    Has a nice WebUI\\
+    Streamlined Pull requests (more on this later)\\
+\end{frame}
+
+\begin{frame}
+    \frametitle{Create a github repo}
+
+    Create a github accont (duh)\\
+    Create repo (initialise with readme so we can clone it)
+    \begin{center}
+        \includegraphics[scale=0.4]{gh-create-repo.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Creating local repositories}
+
+    You can also create a new repo locally by doing:
+    \begin{block}{}
         mkdir myrepo\\
         cd myrepo\\
         git init
     \end{block}
+    However, this will have no "remote", so you wan't be able to "push" it anywhere until you add some (more on this later)
 \end{frame}
 
 \begin{frame}
@@ -45,7 +65,7 @@
         git clone /path/to/repo
     \end{block}
     \begin{block}{Clone a remote repository (These slides!)}
-        git clone https://github.com/netsoc/Git-Tutorial.git
+        git clone https://github.com/username/your-repo.git
     \end{block}
 \end{frame}
 
@@ -90,6 +110,28 @@
     origin is the name that git gives to the place you cloned a repository from.\\
     master is a branch, I will explain that later.
 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Pulling}
+
+    Two copies of the repo (desktop + laptop, say)\\
+    Make changes, commit and push on desktop\\\vbox{}
+    What happens to the laptop copy? We use
+    \begin{block}
+        git pull
+    \end{block}
+    Pulls down all commits pushed to remote repo.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conflicts}
+
+    What happens if we have made changes on the laptop copy too?\\\vbox{}
+    
+    This is called a merge conflict\\
+    Git resolves simple merge conflicts automagically\\
+    Sometimes, we have to do it manually\\
 \end{frame}
 
 \begin{frame}
