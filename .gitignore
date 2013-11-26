@@ -1,3 +1,5 @@
+*.pdf
+*.swp
 *.aux
 *.bbl
 *.blg
