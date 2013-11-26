@@ -118,10 +118,10 @@
     Two copies of the repo (desktop + laptop, say)\\
     Make changes, commit and push on desktop\\\vbox{}
     What happens to the laptop copy? We use
-    \begin{block}
+    \begin{block}{}
         git pull
     \end{block}
-    Pulls down all commits pushed to remote repo.
+    Pulls down all commits on the remote repo
 \end{frame}
 
 \begin{frame}
@@ -133,6 +133,64 @@
     Git resolves simple merge conflicts automagically\\
     Sometimes, we have to do it manually\\
 \end{frame}
+
+\begin{frame}
+    \frametitle{Merge Conflicts}
+
+    For example, user1 makes repo with file "test" saying "i am a test"\\
+    user2 clones repo\\
+    user1 chages to "i are a test", commits, pushes\\
+    user2 changes to "i am not a test", commits, pulls\\
+
+    user2 will then get this error:
+    \begin{center}
+        \includegraphics[scale=0.4]{mergeconflict1.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Merge conflicts}
+
+    git status shows what files you need to fix
+
+    \begin{center}
+        \includegraphics[scale=0.4]{mergeconflict2.png}
+    \end{center}
+\end{frame}
+ 
+\begin{frame}
+    \frametitle{Merge conflicts}
+
+    Edit the file, and see the section git can't fix
+
+    \begin{center}
+        \includegraphics[scale=0.4]{mergeconflict3.png}
+    \end{center}
+
+    Then fix it manually
+
+    \begin{center}
+        \includegraphics[scale=0.4]{mergeconflict4.png}
+    \end{center}
+
+    Between $<<<<<$ and ===== is user1's version, between ==== and $>>>>>$ is user2's
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Merge conflicts}
+
+    git add to mark the file as fixed, then git status will show it in green
+
+    \begin{center}
+        \includegraphics[scale=0.4]{mergeconflict5.png}
+    \end{center}
+
+    Then just commit and push as normal\\
+    Often git will auto merge things, so long as they're not in the same pert of the same file
+\end{frame}
+    
+       
 
 \begin{frame}
     \frametitle{A tutorial introduction}
