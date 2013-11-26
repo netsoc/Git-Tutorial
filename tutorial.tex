@@ -82,17 +82,25 @@
     After the cloning a repo, as on the previous slides, you will have a folder with the repositories
     files in it (normally source code for a program).
 
-    Make your changes, and then...
+    Make your changes, then
+    \begin{block}{}
+        git status
+    \end{block}
+    will show what file have changed, and what has been...
 \end{frame}
 
 \begin{frame}
-    \frametitle{Add and commit}
-    Commit them.
-    You can stage chages (select them for committing) by using
+    \frametitle{Stage files}
+    staged.
+    You can stage changes (select them for committing) by using
     \begin{block}{}
-        git add $\langle$filename$\rangle$ \# adds $\langle$filename$\rangle$\\
+        git add $<$filename$>$ \# adds $<$filename$>$\\
         git add . \# also works on directories
     \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Committing changes}
     To actually commit these changes use
     \begin{block}{}
         git commit -m "Commit message"
