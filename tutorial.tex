@@ -2,7 +2,7 @@
 \usetheme{Rochester}
 \usepackage{graphicx}
 \usecolortheme[named=OliveGreen]{structure}
-\useoutertheme{infolines}
+%\useoutertheme{infolines}
 \useinnertheme{rounded}
 \setbeamertemplate{blocks}[rounded][shadow=false]
 \setbeamertemplate{items}[ball]
@@ -13,7 +13,10 @@
 \subtitle{Git Tutorial}{An introduction to the git VCS}
 \date{\today}
 \titlepage
-\begin{frame}{A tutorial introduction}
+
+\begin{frame}
+	\frametitle{A tutorial introduction}
+
 	Lets start by creating a repo
 	\begin{block}{Create a new repo}
 		mkdir myrepo\\
@@ -22,17 +25,50 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{A tutorial introduction}
-	
-	\begin{block}{Checkout a local repository}
+\begin{frame}
+	\frametitle{Cloning repositories}
+	Makes a local copy of a repository, form e.g github\\
+	Works with lot of protocols (http, ssh, native git protocol, even local files).
+
+	\begin{block}{Clone a local repository}
 		git clone /path/to/repo
 	\end{block}
-	\begin{block}{Checkout a remote repository}
-		git clone https://github.com/netsoc/Git-Tutorial 
+	\begin{block}{Clone a remote repository (These slides!)}
+		git clone https://github.com/netsoc/Git-Tutorial.git
 	\end{block}
 \end{frame}
 
-\begin{frame}{A tutorial introduction}
+\begin{frame}
+	\frametitle{Make your changes}
+	After the cloning a repo, as on the prevois slides, you will have a folder with the repositories
+	files in it (normally source code for a program).
+
+	Make your changes, and then...
+\end{frame}
+
+\begin{frame}
+	\frametitle{Add and commit}
+	Commit them.
+	You can stage chages (select them for committing) by using
+	\begin{block}{}
+		git add $\langle$filename$\rangle$ \# adds $\langle$filename$\rangle$\\
+		git add . \# also works on directories
+	\end{block}
+	To actually commit these changes use
+	\begin{block}{}
+		git commit -m "Commit message"
+	\end{block}
+	commits the changes we have added, with the message "Commit Message"\\
+	
+	\begin{block}{}	
+		git commit
+	\end{block}
+ 	If you don't specify -m "whatever", git will open a text editor, and you can type your commit message in there 
+	Now the file is committed to your local repo, but not on the remote repo \emph{yet}.
+\end{frame}
+
+\begin{frame}
+	\frametitle{A tutorial introduction}
 
 	\begin{block}{Workflow}
 		Your local repository consists of three "trees" maintained by git. The first one is 
@@ -43,14 +79,5 @@
 	\end{center}
 \end{frame}
 
-\begin{frame}{A tutorial introduction}
-	add & commit
-You can propose changes (add it to the Index) using
-git add <filename>
-git add *
-This is the first step in the basic git workflow. To actually commit these changes use
-git commit -m "Commit message"
-Now the file is committed to the HEAD, but not in your remote repository yet.
-\date{\today}
-\end{frame}
+
 \end{document}
