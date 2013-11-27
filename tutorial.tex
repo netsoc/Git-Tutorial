@@ -115,6 +115,46 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Undoing}
+
+    Get a list of commits
+    \begin{block}{}
+        git log
+    \end{block}
+
+    Beside each commit is a unique SHA hash identifier (the big nasty random looking string)\\
+
+    Can use this to go back to any commit
+\end{frame}
+
+\begin{frame}
+    \frametitle{Undoing}
+
+    reset to a specific commit
+    \begin{block}{}
+        git reset $<$commit-id$>$
+    \end{block}
+
+    This will leave all changes from the commits after it as uncommitted changes in your working directory\\
+    If you don't want this
+    \begin{block}{}
+        git reset --hard $<$commit-id$>$
+    \end{block}
+    will reset the working directory to the state of the specified commit.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Undoing}
+
+    Can also do
+    \begin{block}{}
+        git reset HEAD\^{}1
+    \end{block}
+
+    To revert the last commit, \^{}2 for two commits ago, etc
+\end{frame}
+
+\begin{frame}
     \frametitle{Remote repositories}
 
     You now have a commit in your local repository that isn't in the remote repository.
